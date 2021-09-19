@@ -1,0 +1,54 @@
+body{
+	
+	  margin: 30px;
+   
+background:url(../img14.jpg);  
+   background-size: cover;
+   background-position: center;
+   font-family: sans-serif;
+   padding: -20px 25px;
+	
+	
+}
+.about h1{
+	font-size: 3rem;
+	color: white;
+}
+.about{
+	padding: 3rem;
+	text-align: center;
+	font-size: 1rem;
+	color: white;
+}
+
+
+#logo{
+	display: flex;
+float: right;
+bottom: 40px;
+}
+.about p{
+	display: flex;
+	margin-left: 15rem;
+	margin-right: 15rem;
+	text-align: center;
+	font-size: 1.5rem;
+	font-family: 'Bree Serif', serif;
+}
+.about input{
+	padding: 6px 10px;
+	border: 2px solid white;
+	background-color: black;
+	color: white;
+	margin: 17px;
+	font-size: 1.0rem;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.about ol{
+	text-align: left;
+	margin-left: 25rem;
+	font-size: 1.3rem;
+	color: white;
+
+}

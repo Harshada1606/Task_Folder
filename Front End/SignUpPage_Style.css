@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(http://www.emaildesignreview.com/wp-content/uploads/2018/12/abstract-background-1024x273.jpg); 
+   background-size: cover;
+   background-position: center;
+   font-family: sans-serif;
+   padding: 70px 30px;
+}
+.loginbox{
+    width: 680px;
+    height:580px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+
+}
+.avatar{
+    width: 20%;
+    height:20%;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50%, -50px);
+
+}
+h1{
+    
+    margin: 15px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+
+}
+.loginbox p{
+	
+    font-size: 15px;
+	text-align: center;    
+	margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.loginbox input{
+
+    width: 60%;
+    text-align: center;
+   
+    margin-bottom: 20px;
+}
+
+a{
+
+    font-size: 18px;
+}
+
