@@ -1,0 +1,39 @@
+create database `join`;
+use `join`;
+create table Student(
+id int(5),
+FullName varchar(50)
+);
+insert into Student values(101,'Harshada gunjal'),
+(102,'Shital Shinde'),
+(103,'Priyanka Deshamukh'),
+(104,'karina kapoor'),
+(105,'Karishma Arote');
+
+create table employee(
+id int (5),
+entroll varchar(10),
+email varchar(50)
+); 
+insert into employee values(101,'557','harshada@gmail.com'),
+(102,'558','shital@gmail.com'),
+(103,'559','Priyanka@gmail.com'),
+(104,'560','karina@gmail.com'),
+(105,'561','karishma@gmail.com');
+select *from Student;
+select * from Student cross join employee;
+select student.id from  Student cross join employee;
+select * from  Student inner join employee;
+select * from student inner join employee where student.id = employee.id;
+select * from student natural join employee;
+select * from student left outer join employee on student.id=employee.id;
+select * from student right outer join employee on student.id=employee.id;
+
+
+
+
+
+
+
+
+

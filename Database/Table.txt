@@ -1,0 +1,104 @@
+create database AVCOE;
+show databases;
+
+use AVCOE;
+create table Mech(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+create table ece(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+create table cse(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+show tables from AVCOE;
+
+insert into Mech values
+(221,'Priyanka',925677, 'priyanka123@gmail.com'),
+(222,'Lalit',9254673, 'lalit123@gmail.com'),
+(223,'harshada',92374, 'harshada23@gmail.com'),
+(224,'Alisha',92373, 'alisha23@gmail.com'),
+(225,'Rahul',67372, 'rahul123@gmail.com');
+select * from mech;
+
+insert into ece values
+(231,'Shweta',925472, 'sheta123@gmail.com'),
+(232,'Vaibhav',92546, 'vaibhav123@gmail.com'),
+(233,'Ragini',925464, 'ragini23@gmail.com'),
+(234,'Madhura',92546, 'madhura23@gmail.com'),
+(235,'Nalini',986372, 'nalini123@gmail.com');
+select * from ece;
+
+insert into cse values
+(201,'Shital',92542, 'shital123@gmail.com'),
+(202,'Sanket',92575, 'sanket123@gmail.com'),
+(203,'Sagar',925374, 'sagar23@gmail.com'),
+(204,'Nitin',925473, 'nitin23@gmail.com'),
+(205,'Prajkta',98372, 'prajkta123@gmail.com');
+select * from cse;
+
+desc Mech ;
+select * from Mech;
+create table Mech(
+s_aadhar varchar(12)
+
+);
+
+insert into Mech values
+(222,'Bhushan',92578, 'bhushan123@gmail.com');
+alter table mech add (s_section varchar(12) default 'A1' ); 
+select * from mech;
+alter table mech change column s_num roll varchar(5);
+
+delete from mech where roll=222;
+#one data update
+update mech SET s_name='shital' where roll=221;
+# update multiple data 
+update mech SET s_name='shital',s_email='shital@gmail.com' where roll=221;
+
+
+
+alter table ece add (age int (5) default 17);
+update ece set age=18 where s_num=231;
+update ece set age=age+1; 
+select * from ece;
+
+truncate table mech;
+
+create table edubrige(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+insert into edubrige values
+(201,'Shital',92542, 'shital123@gmail.com'),
+(202,'Sanket',92575, 'sanket123@gmail.com'),
+(203,'Sagar',925374, 'sagar23@gmail.com'),
+(204,'Nitin',925473, 'nitin23@gmail.com'),
+(205,'Prajkta',98372, 'prajkta123@gmail.com');
+
+savepoint A;
+insert into edubrige values
+(206,'Harshada',12687,'harshada12@gmail.com');
+
+savepoint B;
+rollback;
+rollback to A;
+select * from edubrige;
+
+
+
