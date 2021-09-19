@@ -1,0 +1,23 @@
+package OOPs;
+
+public class Inheritance {
+
+	public static void main(String[] args) {
+		int a=10,b=20,c=0;
+		c=a+b;
+		System.out.println("Addition "+c);
+		c=a-b;
+		System.out.println("Substraction "+c);
+		child.operation();
+	}
+
+}
+class child{
+	static void operation(){
+	int d=40, e=20,f=0;
+	f=d*e;
+	System.out.println("Multiplication"+f);
+	f=d/e;
+	System.out.println("Division"+f);
+}
+}

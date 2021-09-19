@@ -1,0 +1,33 @@
+package Example1;
+
+public class First  extends Bat{
+
+	public static void main(String[] args) {
+		First f=new First();
+		//f.pen();
+		System.out.println("subclass in Same package");
+		//f.Notebook();
+		f.boll();
+	}
+
+}
+class Pencile{
+	public void pen(){
+		System.out.println("Same class same package for public");
+	}
+}
+class Book{
+	protected void Notebook(){
+		System.out.println("Same class same package for protected");
+	}
+}
+class Bat{
+	void boll(){
+		System.out.println("This is same class same package for default");
+	}
+class Tea{
+	private void coffee(){
+		System.out.println("This is for same class same package for private");
+	}
+}
+}

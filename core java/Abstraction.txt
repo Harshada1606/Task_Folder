@@ -1,0 +1,81 @@
+package OOPs;
+
+public class Abtraction_method {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Union sc=new Union();
+			sc.personal_load();
+			sc.bike_load();
+			sc.cycle_load();
+	}
+
+}
+abstract class RBI {
+	 //abstract class contain abstract  method
+	 abstract void personal_load();
+	 abstract void car_load();
+	 abstract void educational_load();
+	 abstract void home_load();
+	 abstract void gold_load();
+	 
+	 
+	private final void personal_load1(){
+		System.out.println("This is RBI personal load");
+		
+	}
+	private final void car_load1()
+	{
+		System.out.println("This is RBI car load");
+	}
+	private final void educational_load1()
+	{
+		System.out.println("This is RBI educational load");
+	}
+	private final void home_load1()
+	{
+		System.out.println("This is RBI Home load");
+	}
+	private final void gold_load1()
+	{
+		System.out.println("This is RBI Gold load");
+	}
+	void cycle_load(){
+		System.out.println("This is RBI cycle load");
+	}
+
+}
+
+ class Union extends RBI{
+
+
+	void personal_load() {
+		System.out.println("This is union personal load");
+		
+	}
+
+
+	void car_load() {
+		System.out.println("This is union car load");
+		
+	}
+
+
+	void educational_load() {
+		System.out.println("This is union educational load");
+		
+	}
+
+	void home_load() {
+		System.out.println("This is union home load");
+		
+	}
+	void gold_load() {
+		
+		System.out.println("This is union gold load");
+		
+	}
+	void bike_load(){
+		System.out.println("This is union bike load");
+	}
+}

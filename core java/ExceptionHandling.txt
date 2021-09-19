@@ -1,0 +1,56 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class FileNotFountExpection {
+
+	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+		try{
+			File f=new File("Harshada.txt");
+			
+			if(f.createNewFile()){
+				System.out.println("File is created");
+				
+				
+				System.out.println("Name of the file is "+f.getName());
+			}
+		else{
+			System.out.println("File already Exist");
+			}
+		
+				
+		}
+		
+	catch(IOException a){
+		System.out.println(a);
+	}
+		FileWriter obj;
+		try {			obj = new FileWriter("Harshada.txt");
+
+		obj.write("Welcome to Edubrige ");
+		obj.close();
+		System.out.println("File no found");	} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);}
+		try 
+	       {
+             File Obj = new File("Pooja123.txt");
+             Scanner obj1 = new Scanner(Obj);
+             while (obj1.hasNextLine()) 
+             {
+     		  String obj2 = obj1.nextLine();
+    		  System.out.println(obj2);
+             }
+             obj1.close();
+     	}catch (FileNotFoundException e) 
+         {
+             System.out.println("Sorry for the trouble");
+         }
+
+	}
+
+}

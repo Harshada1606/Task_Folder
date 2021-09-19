@@ -1,0 +1,33 @@
+package dataTypes;
+
+import java.util.Scanner;
+
+public class Salary_calculation {
+
+	public static void main(String[] args) {
+		int s1=0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your salary");
+		int salary=sc.nextInt();
+		System.out.println("Enter your shift");
+		int shift=sc.nextInt();
+		if(salary>=1 && salary<=7999 && shift>=1){
+
+			s1=(salary/2)+(((shift*2)*salary)/100);
+			System.out.println("output is "+s1);
+		
+		}
+		else if(salary<=1){
+		
+			System.out.println("salary too small");
+		}
+		else if(salary>=8000){
+			System.out.println("salary too large");
+					}
+		else if(shift<=1){
+			System.out.println("shift too small");
+
+		}
+	}
+
+}

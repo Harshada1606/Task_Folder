@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class Linked_list {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+			ArrayList <String> a=new ArrayList<String> ();
+			System.out.println("Initial list of array" );
+			a.add("Ravi");
+			a.add("Vijay");
+			a.add("Ajay");
+			System.out.println("after adding list"+a);
+			a.add(1, "Gaurav");
+			System.out.println("after adding list at first position"+a);
+			
+			ArrayList <String> b=new ArrayList<String> ();
+			b.add("Sonoo");
+			b.add("Hanumant");
+			System.out.println("Create another array list");
+			a.addAll(1,b);
+			
+			ArrayList <String> c=new ArrayList<String> ();
+			c.add("Rahul");
+			c.add("John");
+			a.addAll(1,c);
+			System.out.println("After adding 3rd array"+c);
+		a.add(0,"Lokesh");
+	}
+
+}
