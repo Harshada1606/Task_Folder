@@ -1,0 +1,27 @@
+package Practice;
+import java.util.*;
+public class Swap_Linked_List {
+
+ public static void main(String[] args) {
+
+  LinkedList <String> l_list = new LinkedList <String> ();
+  
+  l_list.add("Raj");
+  l_list.add("Ganesh");
+  l_list.add("Sanket");
+  l_list.add("shital");
+  l_list.add("Harshada");
+  
+  System.out.println("The Original linked list: " + l_list);
+    Collections.swap(l_list, 2, 3);
+    System.out.println(" after swapping: " + l_list);
+    
+    Object firstElement = l_list.removeFirst();
+    System.out.println("Element removed: "+ firstElement);
+ 
+    Object lastElement = l_list.removeLast();
+    System.out.println("Element removed: "+ lastElement);
+    
+   
+ }
+}
