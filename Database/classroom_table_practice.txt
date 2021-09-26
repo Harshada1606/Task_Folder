@@ -1,0 +1,226 @@
+create database test1;
+drop database test1;
+use test1;
+create table student(
+s_id int(5),
+s_name varchar(20),
+s_email varchar(20),
+s_mark int(2),
+s_age int(2),
+s_city varchar(20)
+);
+
+insert into student values(101,"Pranita","pranita@gmail.com", 80,22,"Mumbai"),
+(102,"Meera","Meera@gmail.com", 90,23,"Pune"),
+(103,"Radha","radha@gmail.com",30,24,"Nagpur"),
+(104,"Khushi","kushi@gmail.com", 55,22,"Chennai"),
+(105,"Rani","rani@gmail.com", 55,24,"Nashik"),
+(106,"Nikita","nikita@gmail.com", 65,21,"Nagar"),
+(107,"Ram","ram@gmail.com", 90,18,"Kolhapur"),
+(108,"Pranav","pranav@gmail.com",40,19,"Satara");
+
+select * from Student where s_age=22; 
+select * from Student where s_mark <=70 || s_age<=20;
+select * from Student where `s_id` in (101,105);
+select * from Student where `s_id`  not in (101,105);
+select * from Student where s_age!=22;
+SELECT *FROM Student WHERE s_mark  BETWEEN 70 AND 80;
+SELECT *FROM Student WHERE s_mark NOT BETWEEN 65 AND 75;
+
+select * from Student where `s_id` not in(106,104) && `s_mark` between 40 and 70;
+select * from Student ORDER BY s_id ASC;
+select * from Student ORDER BY s_mark DESC;
+
+select min(s_mark) from student;
+select max(s_mark) from student;
+select count(s_id) from student;
+
+SELECT AVG(s_mark) FROM Student WHERE (s_mark)+(s_mark)/count(s_id);
+
+SELECT SUM(s_mark) FROM Student WHERE (s_mark)+(s_mark);
+
+create table student1(
+s_id int(5),
+s_name varchar(20),
+s_email varchar(20),
+s_mark int(2),
+s_age int(2),
+s_city varchar(20)
+);
+insert into student1 values(101,"Pranita","pranita@gmail.com", 80,22,"Mumbai"),
+(102,"Meera","Meera@gmail.com", 90,23,"Pune"),
+(103,"Radha","radha@gmail.com",30,24,"Nagpur"),
+(104,"Khushi","kushi@gmail.com", 55,22,"Chennai"),
+(105,"Rani","rani@gmail.com", 55,24,"Sanamner"),
+(106,"Nikita","nikita@gmail.com", 65,21,"Delhi"),
+(107,"Ram","ram@gmail.com", 90,18,"Junner"),
+(108,"Pranav","pranav@gmail.com",40,19,"Satara"),
+
+
+
+(109,"Pranita","pranita@gmail.com", 80,22,"Mumbai"),
+(102,"Meera","Meera@gmail.com", 90,23,"Pune"),
+(103,"Radha","radha@gmail.com",30,24,"Nagpur"),
+(104,"Khushi","kushi@gmail.com", 55,22,"Chennai"),
+(105,"Rani","rani@gmail.com", 55,24,"Sanamner"),
+(106,"Nikita","nikita@gmail.com", 65,21,"Delhi"),
+(107,"Ram","ram@gmail.com", 90,18,"Junner"),
+(108,"Pranav","pranav@gmail.com",40,19,"Satara");
+
+
+
+SELECT s_city FROM student UNION  SELECT s_city FROM student1;
+
+
+SELECT s_city FROM student UNION  ALL SELECT s_city FROM student1;
+
+select distinct (s_name) from student1;
+
+SELECT s_name, s_mark,
+CASE
+    WHEN s_mark >= 60 THEN 'Good Student'
+	WHEN s_mark < 60 THEN 'Average Student'
+    ELSE 'Poor Student'
+END 
+AS result
+FROM student;
+
+SELECT s_name,s_mark
+FROM student
+ORDER BY s_name ASC,s_mark desc;
+
+SELECT s_name
+FROM student
+ORDER BY s_name ASC;
+   
+ 
+  
+create table person(
+ID int(5) NOT NULL,
+lastName varchar(20) NOT NULL,
+firstName varchar(20)  NOT NULL,
+Age int
+
+);
+desc student;
+
+
+insert into person values(101,"Pranita","Shinde", 22),
+(102,"Meera","Gunjal", 23),
+(103,"Radha","Deshamukh",24);
+desc person;
+
+
+create table person1(
+ID int(5) NOT NULL,
+lastName varchar(20) NOT NULL,
+firstName varchar(20)  NOT NULL,
+Age int,
+CONSTRAINT UC_person1 unique (ID,lastName)
+);
+
+
+desc person1;
+ALTER table person1 ADD UNIQUE (ID);
+ALTER table person1 drop INDEX UC_person1;
+
+drop table student;
+
+create table student(
+s_id int(5) primary key,
+s_name varchar(20),
+s_email varchar(20),
+s_mark int(2),
+s_age int(2),
+s_city varchar(20)
+);
+
+desc student;
+drop table person1;
+
+create table person1(
+ID int(5) NOT NULL,
+lastName varchar(20) NOT NULL,
+firstName varchar(20)  NOT NULL,
+Age int,
+CONSTRAINT UC_person1 Primary key(ID,lastName, firstName, Age)
+);
+
+desc person1;
+ALTER table person1 ADD primary key (ID);
+
+
+
+create table student(
+s_id int(5),
+s_name varchar(20),
+s_email varchar(20),
+s_mark int(2),
+s_age int(2),
+s_city varchar(20)
+);
+
+
+ALTER table student ADD CONSTRAINT pk_student primary key (s_name,s_email);
+
+
+create table person2(
+ personID int(5) primary key,
+ FirstName varchar(50),
+ LastName varchar (50)
+);
+
+insert into person2 values(101,"Harshada","Gunjal"),
+(102,"Shital","Shinde"),
+(103,"Sanket","patil");
+
+create table Orders (
+orderId int(5) not null,
+orderNumber int(50) not null,
+personID int  (5),
+ FOREIGN KEY (PersonID) REFERENCES Person2(PersonID)
+ 
+);
+drop table Orders;
+insert into Orders values(1,77895,103),
+(2,8967,103),
+(3,9867,102),
+(4,92433,101);
+desc Orders;
+select * from Orders;
+
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Person2(PersonID);
+
+
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID) REFERENCES Person2(PersonID);
+
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonOrder;
+
+
+
+select * from Persons5;
+drop table persons6;
+CREATE TABLE Persons5 (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age>=18)
+);
+
+
+insert into Persons5 values(101,"Harshada","Gunjal",16);
+
+
+
+
+
+
+
+
+
+
+
