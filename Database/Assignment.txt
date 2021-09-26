@@ -1,0 +1,58 @@
+create database Example3;
+
+use Example3;
+create table teachers (
+    id int(10),
+    first_name varchar(25),
+    last_name varchar(50),
+    school varchar(50),
+    hire_date date,
+    salary int(10)
+);
+
+
+
+insert into student (first_name, last_name, school, hire_date, salary)values('Harshada', 'Gunjal', 'AVCOE ', '2011-10-30', 45200),
+       ('Shital', 'Shinde', 'AVCOE ', '1993-05-22', 65000),
+       ('Pranita', 'Thorat', 'Sinhagad', '2005-08-01', 43500),
+       ('Lalit', 'arote', 'MIT', '2011-10-30', 36200),
+       ('Sanket', 'Deshamukh', 'Wghire', '2005-08-30', 43500),
+       ('Saloni', 'Patil', 'PCCOE', '2010-10-22', 38500);
+       
+select * from student;
+
+select last_name, first_name, salary from student;
+
+select distinct school from student;
+
+select distinct school, salary from student;
+
+select first_name, last_name, salary from student order by salary DESC;
+
+select last_name, school, hire_date from student order by school ASC, hire_date DESC;
+
+
+select last_name, school, hire_date from student where school = 'PES MCOE';
+
+select first_name, last_name, school from student where first_name = 'Sapna';
+
+
+select school from student where school != 'PES MCOE';
+
+select first_name, last_name, hire_date from student where hire_date < '2000-01-01';
+
+select first_name, last_name, salary from student where salary >= 43500;
+
+select first_name, last_name, school, salary from student where salary between 40000 and 65000;
+
+select first_name from student where first_name like 'Har%';
+
+select first_name from student where first_name like '%la';
+
+select * from student where school = 'AVCOE 'AND salary < 70000;
+
+select *from student where last_name = 'Gunjal'OR last_name = 'Patil';
+
+select *from student where school = ' PCCOE'AND (salary > 38000 OR salary < 70000);
+
+select first_name, last_name, school, hire_date, salary from student where school like '%co%'order by hire_date DESC;
