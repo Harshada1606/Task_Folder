@@ -1,0 +1,46 @@
+body{
+	background-color: #87CEFA;
+}
+
+h1{
+	
+	text-align: center;
+}
+h2{
+	margin-left: 10px;
+}
+
+p{
+	
+	text-align: left;
+	width: 300px;
+	margin-left: 10px;
+	line-height: 21px;
+	font-size: 20px;
+display: block;
+
+
+}
+
+.body{
+	width: 500px;
+	float: right;
+	margin-right: 500px;
+	margin-top: -400px;
+}
+
+ .meta div{
+ 	float: right;
+ 	margin-right: 100px;
+ 	font-family:  Sans-Serif;
+ 	
+ 	
+
+}
+.meta div{
+ 	float: right;
+ 	margin-right: 50px;
+ 	font-family:  Sans-Serif;
+ 	
+ }
+
