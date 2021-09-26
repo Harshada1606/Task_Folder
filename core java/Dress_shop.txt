@@ -1,0 +1,73 @@
+package Practice;
+
+import java.util.Scanner;
+
+
+	abstract class dress{
+	    int jacket,jeans,shirt,price,number;
+	    abstract void getCost();
+	}
+
+
+	class Owner extends dress{
+	    Owner(int num1,int num2,int num3){
+	    	jacket = jacket + num1;
+	    	jeans = jeans + num2;
+	    	shirt = shirt + num3;
+	    }
+
+	   
+	    void getCost(){
+	        number = jacket+jeans+shirt;
+	        price = (jacket*1500) + (jeans*700) + (shirt*1000);
+	        System.out.println("Total "+ number + " items are added and Cost of these items is "+ price+ " Rs." );
+	    }
+	}
+
+	class Customer extends dress{
+	    Customer(int num1,int num2,int num3){
+	    	jacket = jacket + num1;
+	    	jeans = jeans + num2;
+	    	shirt = shirt + num3;
+	    }
+	    void getCost(){
+	        number = jacket+jeans+shirt;
+	        price = (jacket*1500) + (jeans*700) + (shirt*1000);
+	        System.out.println("Total price of buying elements is "+price+" Rs.");
+	    }
+	}
+
+
+
+	public class Dress_Shop {
+
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+	        System.out.println("Select Owner/Customer:");
+	        String type = sc.next();
+	        if(type.equals("Owner")){
+	            System.out.println("Enter the number of jacket");
+	            int val1 = sc.nextInt();
+	            System.out.println("Enter number of jeans");
+	            int val2 = sc.nextInt();
+	            System.out.println("Enter number of shirt");
+	            int  val3 = sc.nextInt();
+	            dress item1 = new Owner(val1, val2, val3);
+	            item1.getCost();
+	        }
+	        else{
+	            System.out.println("Welcome to Dress Shop");
+	            System.out.println("Enter number of jacket");
+	            int val1 = sc.nextInt();
+	            System.out.println("Enter number of jeans");
+	            int val2 = sc.nextInt();
+	            System.out.println("Enter number of shirt");
+	            int  val3 = sc.nextInt();
+	           dress item2 = new Customer(val1, val2, val3);
+	            item2.getCost();
+	        }
+	        sc.close();
+
+	    }
+	}
+
