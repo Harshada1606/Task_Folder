@@ -1,0 +1,25 @@
+package Practice;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Capgemini {
+
+	public static void main(String[] args) {
+
+
+ArrayList<String> arr=new ArrayList<String>();
+	arr.add("Harshada");
+	arr.add("Shital");
+	arr.add("Alisha");
+	arr.add("Nayana");
+	arr.add("Saloni");
+	System.out.println("Original List: "+arr);
+	ArrayList Arr1
+    = (ArrayList)arr.clone();
+System.out.println("clone List: "+Arr1);
+	arr.remove(1);
+	System.out.println("Remove element: "+arr);
+}
+}
